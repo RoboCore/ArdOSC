@@ -2,7 +2,7 @@
  
  ArdOSC 2.1 - OSC Library for Arduino.
  
- -------- Lisence -----------------------------------------------------------
+ -------- License -----------------------------------------------------------
  
  ArdOSC
  
@@ -19,38 +19,26 @@
 #include "OSCDecoder.h"
 #include "Pattern.h"
 
-class OSCServer{
-    
+class OSCServer{    
 private:
-    int16_t _sock;
-    uint16_t _port;
-    
-	uint8_t _rcvData[kMaxRecieveData];
-	
+  int16_t _sock;
+  uint16_t _port;
+  uint8_t _rcvData[kMaxReceiveData];
+  OSCDecoder::OSCDecoder _decoder;
+  Pattern::Pattern _adrMatch; 
 
-    OSCDecoder::OSCDecoder _decoder;
-    Pattern::Pattern _adrMatch;
-	
-   
-	void rcvFlush(void);
-    
-    
+  void rcvFlush(void);
     
 public:
-    
-    OSCServer(void);
-	~OSCServer(void);
-    
-	int16_t begin(uint16_t _recievePort);
-	void stop(void);
-	
-	
-    int16_t aviableCheck(void);
-
-
-    //_adr osc address string pointer - "/ard/aaa"
-    //_func callback function pointer
-    void addCallback(char *_adr , Pattern::AdrFunc _func );
+  OSCServer(void);
+  ~OSCServer(void);
+  
+  //_adr osc address string pointer - "/ard/aaa"
+  //_func callback function pointer
+  void addCallback(char *_adr , Pattern::AdrFunc _func );
+  int16_t availableCheck(void);
+  int16_t begin(uint16_t _receivePort);
+  void stop(void);
 
 };
 

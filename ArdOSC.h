@@ -9,7 +9,7 @@
  2009/03/21 version 1.0.0
  
  
- -------- Lisence -----------------------------------------------------------
+ -------- License -----------------------------------------------------------
  
  ArdOSC
  
@@ -45,9 +45,6 @@
 #define ArdOSC_h
 
 
-
-
-
 #include "OSCCommon/OSCcommon.h"
 #include "OSCCommon/OSCMessage.h"
 
@@ -58,3 +55,6 @@
 
 
 #endif
+
+
+

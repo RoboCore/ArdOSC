@@ -2,7 +2,7 @@
  
  ArdOSC 2.1 - OSC Library for Arduino.
  
- -------- Lisence -----------------------------------------------------------
+ -------- Licence -----------------------------------------------------------
  
  ArdOSC
  
@@ -23,34 +23,26 @@
 #define kDummyPortNumber 10000
 
 
-
 class OSCClient{
-	
 private:
-        
-	uint8_t _sock;
-	
+  uint8_t _sock;
+  uint8_t *_sendData;
+  OSCEncoder::OSCEncoder encoder;
 
-    uint8_t *_sendData;
-    
-    OSCEncoder::OSCEncoder encoder;
+  void flushSendData(void);
+  void sockClose(void);
+  int16_t sockOpen(void);
 
-    int16_t sockOpen(void);
-	void sockClose(void);
-	
-	void flushSendData(void);
-    
-    
 public:
-    
-	OSCClient(void);
-	~OSCClient(void);
-    
+  OSCClient(void);
+  ~OSCClient(void);
 
-	int16_t send( OSCMessage *_message);
-    
-			
+  int16_t send( OSCMessage *_message);
+    		
 };
 
 
 #endif
+
+
+

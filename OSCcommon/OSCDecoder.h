@@ -2,7 +2,7 @@
  
  ArdOSC 2.1 - OSC Library for Arduino.
  
- -------- Lisence -----------------------------------------------------------
+ -------- Licence -----------------------------------------------------------
  
  ArdOSC
  
@@ -19,16 +19,16 @@
 #include "OSCMessage.h"
 
 class OSCDecoder{
-	
 private:
-
-    
-	int16_t decode( OSCMessage::OSCMessage *_mes ,const uint8_t *_binData );
+  int16_t decode( OSCMessage::OSCMessage *_mes ,const uint8_t *_binData );
     
 public:
-    
-
-    friend class OSCServer;
+  
+  friend class OSCServer;
 };
 
 #endif
+
+
+
+

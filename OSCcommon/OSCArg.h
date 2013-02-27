@@ -2,7 +2,7 @@
  
  ArdOSC 2.1 - OSC Library for Arduino.
  
- -------- Lisence -----------------------------------------------------------
+ -------- Licence -----------------------------------------------------------
  
  ArdOSC
  
@@ -19,33 +19,30 @@
 
 
 class OSCArg{
-	
 private:
-	
-    char        _typeTag;
+  char _typeTag;
+  void* _argData;
+  uint16_t _dataSize;
+  uint16_t _alignmentSize;
     
-    void*       _argData;
-    
-    uint16_t    _dataSize;
-    uint16_t    _alignmentSize;
-    
-	
 public:
-    
-    OSCArg(void);
-    OSCArg(char _tag);
-    OSCArg(char _tag, void *_data, uint16_t _size, bool _packSizeCulc);
-    
-	~OSCArg(void);
-	
-    void flush(void);
-    
-
-	friend class OSCDecoder;
-	friend class OSCEncoder;
-    friend class OSCMessage;
+  OSCArg(void);
+  OSCArg(char _tag);
+  OSCArg(char _tag, void *_data, uint16_t _size, bool _packSizeCulc);
+  ~OSCArg(void);
+  	
+  void flush(void);
+  
+  
+  friend class OSCDecoder;
+  friend class OSCEncoder;
+  friend class OSCMessage;
     
 };
 
 
 #endif
+
+
+
+
