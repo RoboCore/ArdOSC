@@ -35,3 +35,9 @@ http://www.arduino.cc/en/Hacking/Libraries
 
  *** updated by RoboCore
 
+13/02/27 - 1.0
+	* formatted and changed spelling
+	+ added wildcard support for callbacks
+	+ added optional general callback, to be executed each
+		time a message is received
+

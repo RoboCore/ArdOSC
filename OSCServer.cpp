@@ -2,6 +2,8 @@
  
  ArdOSC 2.1 - OSC Library for Arduino.
  
+ (RoboCore v_1.0)
+ 
  -------- License -----------------------------------------------------------
  
  ArdOSC
@@ -9,6 +11,8 @@
  The MIT License
  
  Copyright (c) 2009 - 2011 recotana( http://recotana.com )　All right reserved
+ 
+ + updates by RoboCore (www.RoboCore.net)
  
  */
 
@@ -24,13 +28,14 @@
 //----------------------------------------------------------------------------
 
 OSCServer::OSCServer(void){
-    _sock = MAX_SOCK_NUM;
+  _useGeneralCallback = 0;
+  _sock = MAX_SOCK_NUM;
 }
 
 //----------------------------------------------------------------------------
 
 OSCServer::~OSCServer(void){
-    stop();
+  stop();
 }
 
 //----------------------------------------------------------------------------
@@ -41,7 +46,20 @@ void OSCServer::addCallback(char *_adr , Pattern::AdrFunc _func ){
 
 //----------------------------------------------------------------------------
 
+void OSCServer::addGeneralCallback(Pattern::AdrFunc function){
+  _generalCallback = function;
+  _useGeneralCallback = 1;
+}
+
+//----------------------------------------------------------------------------
+
 int16_t OSCServer::availableCheck(void){
+  return availableCheck(CALL_GENERAL_CALLBACK | CALL_SPECIFIC_CALLBACK);
+}
+
+//----------------------
+
+int16_t OSCServer::availableCheck(uint8_t options){
   if(!(W5100.readSnIR(_sock) && SnIR::RECV))
     return -1;
   if(W5100.getRXReceivedSize(_sock) == 0)
@@ -54,8 +72,12 @@ int16_t OSCServer::availableCheck(void){
     
   if( _decoder.decode( &rcvMes ,_rcvData ) < 0 )
     return -1;
-    
-  _adrMatch.paternComp(&rcvMes);
+
+  //callbacks
+  if((options & CALL_GENERAL_CALLBACK) && (_useGeneralCallback == 1))
+    _generalCallback(&rcvMes);
+  if(options & CALL_SPECIFIC_CALLBACK)
+    _adrMatch.paternComp(&rcvMes);
 	    
   return 1;
 }
@@ -103,6 +125,8 @@ void OSCServer::stop(void){
   close(_sock);
   _sock = MAX_SOCK_NUM;
 }
+
+//----------------------------------------------------------------------------
 
 
 

@@ -22,6 +22,7 @@ begin	KEYWORD2
 stop	KEYWORD2
 availableCheck	KEYWORD2
 addCallback	KEYWORD2
+addGeneralCallback	KEYWORD2
 
 flush	KEYWORD2
 setAddress	KEYWORD2

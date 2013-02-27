@@ -8,6 +8,8 @@
  2009/03/22 version 1.0.1 add errror process。change Doc.
  2009/03/21 version 1.0.0
  
+ (RoboCore v_1.0)
+ 
  
  -------- License -----------------------------------------------------------
  
@@ -16,6 +18,8 @@
  The MIT License
  
  Copyright (c) 2009 - 2010 recotana( http://recotana.com )　All right reserved
+ 
+ + updates by RoboCore (www.RoboCore.net)
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
