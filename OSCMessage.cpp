@@ -12,7 +12,7 @@
  
  Copyright (c) 2009 - 2011 recotana( http://recotana.com )　All right reserved
  
- + updates by RoboCore (www.RoboCore.net)
+ + updates by RoboCore ( http://www.RoboCore.net/ )
  
  */				   
 
@@ -104,7 +104,7 @@ int16_t OSCMessage::getArgsNum(void){
 
 //----------------------------------------------------------------------------
 
-char OSCMessage::getArgTypeTag(int16_t _index){
+char OSCMessage::getArgTypeTag(uint16_t _index){
   if(_index>_argsNum)
     return -1;
   
@@ -206,7 +206,7 @@ int16_t OSCMessage::addArgInt32(int32_t _value){
 
 //----------------------------------------------------------------------------
 
-int32_t OSCMessage::getArgInt32(int16_t _index){
+int32_t OSCMessage::getArgInt32(uint16_t _index){
   if ( _index > _argsNum )
    return -1;
   
@@ -236,7 +236,7 @@ int16_t OSCMessage::addArgFloat(float _value){
 
 //----------------------------------------------------------------------------
 
-float OSCMessage::getArgFloat(int16_t _index){
+float OSCMessage::getArgFloat(uint16_t _index){
   if ( _index > _argsNum )
     return -1;
    
@@ -263,7 +263,7 @@ int16_t OSCMessage::addArgString(const char* _value){
 
 //----------------------------------------------------------------------------
 
-int16_t  OSCMessage::getArgString(int16_t _index , char *_rcvstr){ 
+int16_t  OSCMessage::getArgString(uint16_t _index , char *_rcvstr){ 
   if ( _index > _argsNum )
     return -1;
   
@@ -274,7 +274,7 @@ int16_t  OSCMessage::getArgString(int16_t _index , char *_rcvstr){
 
 //----------------------------------------------------------------------------
 
-int16_t  OSCMessage::getArgStringSize(int16_t _index){
+int16_t  OSCMessage::getArgStringSize(uint16_t _index){
   if ( _index > _argsNum )
    return -1;
   

@@ -12,10 +12,9 @@
  
  Copyright (c) 2009 - 2011 recotana( http://recotana.com )　All right reserved
  
- + updates by RoboCore (www.RoboCore.net)
+ + updates by RoboCore ( http://www.RoboCore.net/ )
  
  */
-
 
 
 #include <stdlib.h>

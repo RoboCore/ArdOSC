@@ -40,4 +40,8 @@ http://www.arduino.cc/en/Hacking/Libraries
 	+ added wildcard support for callbacks
 	+ added optional general callback, to be executed each
 		time a message is received
+	+ in <Message> library, changed _index type in function
+		calls from int16_t to uint16_t to prevent erroneous
+		calls with negative indexes
+
 

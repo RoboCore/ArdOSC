@@ -19,7 +19,7 @@
  
  Copyright (c) 2009 - 2010 recotana( http://recotana.com )　All right reserved
  
- + updates by RoboCore (www.RoboCore.net)
+ + updates by RoboCore ( http://www.RoboCore.net/ )
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
