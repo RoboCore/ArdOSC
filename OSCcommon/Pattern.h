@@ -21,7 +21,7 @@
 
 #include "OSCMessage.h"
 
-#define kMaxPatternMatch    50
+#define kMaxPatternMatch    20  //previously 50
 #define USE_WILDCARD //wildcard = '^'
 //  NOTE: the wildcard MUST be replaced by another character
 //          ex: address to match : /RoboCore/wild/^

@@ -59,7 +59,7 @@ int16_t OSCServer::availableCheck(void){
 
 //----------------------
 
-int16_t OSCServer::availableCheck(uint8_t options){
+int16_t OSCServer::availableCheck(uint8_t options, uint8_t flush){
   if(!(W5100.readSnIR(_sock) && SnIR::RECV))
     return -1;
   if(W5100.getRXReceivedSize(_sock) == 0)
@@ -78,6 +78,9 @@ int16_t OSCServer::availableCheck(uint8_t options){
     _generalCallback(&rcvMes);
   if(options & CALL_SPECIFIC_CALLBACK)
     _adrMatch.paternComp(&rcvMes);
+  
+  if(flush != 0)
+    rcvFlush();
 	    
   return 1;
 }
@@ -103,7 +106,7 @@ int16_t OSCServer::begin(uint16_t _receivePort){
     
   if(socket( _sock , SnMR::UDP , _port, 0))
     return -1;
-    
+  
   rcvFlush();
 
   return 1;

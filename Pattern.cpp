@@ -42,6 +42,10 @@ Pattern::~Pattern(){
 //----------------------------------------------------------------------------
 
 void Pattern::addOscAddress(char *_adr ,  AdrFunc _func){
+  //check for array limit
+  if(patternNum >= kMaxPatternMatch)
+    return;
+  
   adrFunc[patternNum] = _func;
   addr[patternNum] = _adr;
   patternNum++;

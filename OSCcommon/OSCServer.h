@@ -48,7 +48,7 @@ public:
   void addCallback(char *_adr , Pattern::AdrFunc _func );
   void addGeneralCallback(Pattern::AdrFunc function);
   int16_t availableCheck(void); //default to call GENERAL + SPECIFIC
-  int16_t availableCheck(uint8_t options);
+  int16_t availableCheck(uint8_t options, uint8_t flush = 0);
   int16_t begin(uint16_t _receivePort);
   void stop(void);
 
