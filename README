@@ -1,4 +1,4 @@
-
+﻿
 
  *** originally by recotana / ArdOSC
 
@@ -6,6 +6,8 @@ for Arduino firmware 1.0rc-1
 
 tested Arduino Ethernet
 http://www.arduino.cc/en/Main/ArduinoBoardEthernet
+	!!! this library currently supports only the
+	    Ethernet Shield (W5100 Ethernet Controller)
 
 Installation
 ArdOSC folder into ..
